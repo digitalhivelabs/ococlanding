@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>One Coast One Community</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <!-- Stylesheets-->
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+        <p>Loading...</p>
+      </div>
+    </div>
+    <div class="page">
+      <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-corporate" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="106px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-aside-outer">
+              <div class="rd-navbar-aside">
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <!-- RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <!--Brand-->
+                    <!-- <a class="brand" href="index.html"><img src="images/logo-default-450x37_2.png" alt="" width="225" height="18"/></a> -->
+                    <a class="brand" href="index.html"><img src="images/logov2.png" alt="" height="18"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-aside-right rd-navbar-collapse">
+                  <ul class="rd-navbar-corporate-contacts">
+                  <!-- </ul><a class="button button-md button-default-outline-2 button-ujarak" href="http://ococapp.io" target="_blank">Visit our App</a> -->
+                  </ul><a class="button button-md button-default-outline-2 button-ujarak" href="#" target="_blank">Visit our App</a>
+                </div>
+                <div>
+                  <li><a href="#" onclick="changeLanguage('en')">English</a></li>
+                  <li><a href="#" onclick="changeLanguage('es')">Espanol</a></li>
+                </div>
+              </div>
+            </div>
+
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <div class="rd-navbar-nav-wrap">
+                  <ul class="list-inline list-inline-md rd-navbar-corporate-list-social">
+                    <li><a class="icon fa fa-facebook" href="https://www.facebook.com/binationalwater" target="_blank"></a></li>
+                    <li><a class="icon fa fa-twitter" href="https://x.com/BinationalWater" target="_blank"></a></li>
+                    <li><a class="icon fa fa-instagram" href="https://www.instagram.com/binationalwater" target="_blank"></a></li>
+                  </ul>
+                  <ul class="rd-navbar-nav">
+                    <li class="dropdown rd-nav-item">
+                      <!-- <a data-i18n="home" class="rd-nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      </a> -->
+                      <a data-i18n="home" class="rd-nav-link" href="about.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    </a>
+                      <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Project Overview</a></li>
+                        <li><a class="dropdown-item" href="#">Partners & Sponsors</a></li>
+                        <li><a class="dropdown-item" href="#">Meet the Team</a></li>
+                      </ul> -->
+                    </li>              
+
+                    <li class="dropdown rd-nav-item">
+                      <a data-i18n="challenges" class="rd-nav-link" href="challenges.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      </a>
+                    </li>   
+
+                    <li class="dropdown rd-nav-item">
+                      <a data-i18n="monitoring" class="rd-nav-link" href="#" id="navbarDropdown" role="button" data-toggle="modal" data-target="#monitorModal">
+                        
+                      </a>
+                      <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Baseline analysis</a></li>
+                        <li><a class="dropdown-item" href="#">Water Quality Monitoring</a></li>
+                        <li><a class="dropdown-item" href="#">Erosion Monitoring</a></li>
+                      </ul> -->
+                    </li>                    
+
+                    <li class="rd-nav-item">
+                      <a data-i18n="citizenscience" class="rd-nav-link" href="citizen.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      </a>
+                    </li>
+
+                    <li class="rd-nav-item">
+                      <a data-i18n="elearning" class="rd-nav-link" href="elearning.html"></a>
+                    </li>
+                    
+                    <li class="dropdown rd-nav-item">
+                      <!-- <a class="rd-nav-link" href="http://www.onecoastonecommunity.org/admin/" target="_blank" role="button" aria-expanded="false"> -->
+                      <a class="rd-nav-link" href="#" target="_blank" role="button" aria-expanded="false">
+                        Data Dashboard
+                      </a>
+                    </li>  
+                    <!-- <li class="dropdown rd-nav-item">
+                      <a class="rd-nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>                     -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          
+
+          </nav>
+        </div>
+      </header>
+
+    <section class="section section-sm section-first bg-default text-md-left bg-gray-4 p-5 mt-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-3">
+              <img src="./images/snapshot.PNG">
+            </div>
+            <div class="col text-start">
+              <h3>Acerca del curso</h3>
+              <div class="lead">Descripción</div>
+              <p>
+                Debido a la gran crisis ambiental y del agua que se vive tanto a nivel global como local, es imprescindible tomar acción para mitigar, revertir y prevenir las condiciones que deterioren la calidad de vida de las personas, así como la estructura y función de los ecosistemas. Las condiciones de esta crisis requiere, no solo de la respuesta de las autoridades y de la intervención técnicas...
+              </p>
+              <div>
+                <a href="#">Descarga el curso</a> o <a href="#" target="_blank">Visita el curso en linea</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>      
+
+      <!-- Page Footer-->
+      <!-- <img src="images/UnderContruction.png"/> -->
+
+
+      <footer class="section footer-corporate context-dark">
+        <div class="footer-corporate-inset">
+          <div class="container">
+            <div class="row row-40 justify-content-lg-between">
+              
+              <div class="col-sm-6 col-md-3">
+                <div class="oh-desktop">
+                  <div class="wow slideInRight" data-wow-delay="0s">
+                    <!-- <img src="images/OneLogo.png"/> -->
+                    <img src="images/LogoV3.png"/>
+                    <h6 class="mt-2 mb-2" class="text-spacing-100 text-uppercase">Disclaimer</h6>
+                    <div class="mb-2">
+                      All materials published in this website are solely the opinions of the authors and not of the founding partners.The One Coast, One Community project does not advocate for any political or interest group nor particular agendas.
+                    </div>
+                    <div class="mb-2">
+                      <ul class="footer-contacts d-inline-block d-sm-block">
+                        <li>
+                          <div class="unit">
+                            <div class="unit-left"><span class="icon fa fa-location-arrow"></span></div>
+                            <div class="unit-body"><a class="link-location" href="#">1209 Encinitas St. San Antonio, Texas 78163</a></div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="unit">
+                            <div class="unit-left"><span class="icon fa fa-phone"></span></div>
+                            <div class="unit-body"><a class="link-phone" href="tel:#">(979) 422-4974</a></div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="unit">
+                            <div class="unit-left"><span class="icon fa fa-envelope"></span></div>
+                            <div class="unit-body"><a class="link-aemail" href="mailto:#">management@binationalwater.org</a></div>
+                          </div>
+                        </li>
+                      </ul>                      
+                    </div>
+                    <div>
+                      Detailed contact information and a form for inquiries, feedback, or further engagement.
+                    </div>
+                    <!-- <ul class="footer-contacts d-inline-block d-sm-block">
+                      <li>
+                        <div class="unit">
+                          <div class="unit-left"><span class="icon fa fa-phone"></span></div>
+                          <div class="unit-body"><a class="link-phone" href="tel:#">+52 999-999-9999</a></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="unit">
+                          <div class="unit-left"><span class="icon fa fa-envelope"></span></div>
+                          <div class="unit-body"><a class="link-aemail" href="mailto:#">info@onecoastonecommunity.org</a></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="unit">
+                          <div class="unit-left"><span class="icon fa fa-location-arrow"></span></div>
+                          <div class="unit-body"><a class="link-location" href="#">Tijuana Baja California, Mexico</a></div>
+                        </div>
+                      </li>
+                    </ul> -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="col-sm-6 col-md-5 col-lg-3 col-xl-4">
+                <div class="oh-desktop">
+                  <div class="wow slideInDown" data-wow-delay="0s">
+                    <h6 class="text-spacing-100 text-uppercase">Popular news</h6>
+                    <article class="post post-minimal-2">
+                      <p class="post-minimal-2-title"><a href="#">Your Personal Guide to 5 Best Beaches to Visit on Earth</a></p>
+                      <div class="post-minimal-2-time">
+                        <time datetime="2019-05-04">May 04, 2019</time>
+                      </div>
+                    </article>
+                    <article class="post post-minimal-2">
+                      <p class="post-minimal-2-title"><a href="#">Top 10 Beaches: Rating by Quality Test Experts</a></p>
+                      <div class="post-minimal-2-time">
+                        <time datetime="2019-05-04">May 04, 2019</time>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div> -->
+
+              <div class="col-sm-11 col-md-3">
+                <div class="oh-desktop">
+                  <div class="wow slideInLeft" data-wow-delay="0s">
+                    <h6 class="text-spacing-100 text-uppercase">Quick links</h6>
+                    <ul class="row-6 list-0 list-marked list-marked-md list-marked-secondary list-custom-2">
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">Monitoring</a></li>
+                      <li><a href="#">Citizen Science</a></li>
+                      <li><a href="#">News & Updates</a></li>
+                      <li><a href="#">Data Dashboard</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-11 col-md-3">
+                <div class="oh-desktop">
+                  <div class="wow slideInLeft" data-wow-delay="0s">
+                    <h6 class="text-spacing-100 text-uppercase">Policies</h6>
+                    <ul class="footer-contacts d-inline-block d-sm-block">
+                      <li>
+                        <div class="unit">
+                          <div class="unit-left"><span class="icon fa fa-file-text"></span></div>
+                          <div class="unit-body"><a class="link-phone" href="#" data-toggle="modal" data-target="#termsModal">Terms of Service</a></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="unit">
+                          <div class="unit-left"><span class="icon fa fa-exclamation-triangle"></span></div>
+                          <div class="unit-body"><a class="link-phone" href="#" data-toggle="modal" data-target="#privacyModal">Privacy Policy</a></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="unit">
+                          <div class="unit-left"><span class="icon fa fa-facebook"></span></div>
+                          <div class="unit-body"><a class="link-phone" href="https://www.facebook.com/binationalwater" target="_blank">Our Facebook</a></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="unit">
+                          <div class="unit-left"><span class="icon fa fa-twitter"></span></div>
+                          <div class="unit-body"><a class="link-aemail" href="https://x.com/BinationalWater" target="_blank">Our Twitter</a></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="unit">
+                          <div class="unit-left"><span class="icon fa fa-instagram"></span></div>
+                          <div class="unit-body"><a class="link-location" href="https://www.instagram.com/onecoastonecommunity" target="_blank">Our Instagram</a></div>
+                        </div>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <img src="./images/logobwt.png"/>
+                <p>One Coast One Community is proudly developed by The: Permanent Forum of Binational Waters a certified 501(c)3 nonprofit organization.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="footer-corporate-bottom-panel">
+          <div class="container">
+            <div class="row justfy-content-xl-space-berween row-10 align-items-md-center2">
+              <div class="col-sm-6 col-md-4 text-sm-right text-md-center">
+                <div>
+                  <ul class="list-inline list-inline-sm footer-social-list-2">
+                    <li><a class="icon fa fa-facebook" href="https://www.facebook.com/onecoastonecommunity" target="_blank"></a></li>
+                    <li><a class="icon fa fa-twitter" href="https://twitter.com/onecoastone" target="_blank"></a></li>
+                    <li><a class="icon fa fa-instagram" href="https://www.instagram.com/onecoastonecommunity" target="_blank"></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 order-sm-first">
+                <!-- Rights-->
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>One Coast One Community</span>. All Rights Reserved.</p>
+              </div>
+              <div class="col-sm-6 col-md-4 text-md-right">
+                <p class="rights">
+                  <a href="#" data-toggle="modal" data-target="#privacyModal">Privacy Policy</a> • 
+                  <a href="#" data-toggle="modal" data-target="#termsModal">Terms of Service</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+      <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: left;">
+        
+          <p class="lead">Site Disclaimer</p>
+          <p>
+            Disclaimer about information provided on the One Coast One Community website, operated by Permanent Forum of Binational Waters. 
+          </p>
+          <p>
+            With respect to documents available from this web server, or documents from other servers made available through this web server, neither the Permanent Forum of Binational Waters (PFBW), nor any of their employees, nor any of their contractors, subcontractors, or their employees, makes any warranty, express or implied, including the warranties of merchantability and fitness for a particular purpose, or assumes any legal liability or responsibility for the accuracy, completeness, or usefulness of any information, apparatus, product, or process disclosed, or represents that its use would not infringe privately-owned rights. 
+          </p>
+          <p class="lead">Privacy Policies</p>
+          <p>
+            Information That May Be Collected And How It May Be Used If you do nothing during your visit to the One Coast One Community project website but browse or download information, we may automatically collect and store the following information about your visit:
+          </p>
+          <p>
+            The Internet Protocol (IP) address and domain name used, but not the email address. The IP address is a numerical identifier assigned either to your Internet Service Provider or directly to your computer. We use the IP address to direct Internet traffic to you; The type of browser and operating system you used and your connection speed; The date and time you visited this site; The webpages or services you accessed at this site; and The website you visited prior to coming to this website. The information we collect or store may be used to improve the content of our Web services and to help us understand how people are using our services. Our website logs do not identify anyone personally, and we make no attempt to link them with the individuals that browse the County website.  
+          </p>
+          <p>
+            If during your visit to the One Coast One Community project website or mobile app you send an email, provide data, participate in a survey, report an issue, the following additional information will be collected: 
+          </p>
+          <p>
+            <ul>
+              <li>• Email correspondence: The email address and contents of the email; </li>
+              <li>• Surveys: Any information you volunteered in response to a survey. </li>
+              <li>• Web or mobile app: Any information submitted as well as geolocation data permitted by the device and/or technical specifications such as, but not limited to, camera type, photo metadata, or device model and operating system. </li>
+            </ul>
+          </p>
+          <p>The information collected may not be limited to text characters and may include audio, video, and graphic information formats you send us. Survey information and issues reported would be used for the purpose designated. </p>
+          <p>Personal Information and Choice "Personal information" is information about an individual that is readily identifiable to that specific individual. Personal information includes personal identifiers such as an individual's name, address, and phone number. A domain name or IP address is not considered personal information. </p>
+          <p>We will not collect personal information about you unless you voluntarily participate in an activity that asks for information (i.e. creating a user account in our website, sending an e-mail or participating in a survey). If you choose not to participate in these activities, your choice will in no way affect your ability to use any other feature of the County's website. </p>
+          <p>Children are not eligible to use services that require submission of personal information, and we require that minors (under the age of 18) do not submit any personal information to us. This includes submitting personal information to the One Coast, One community website as part of a user profile or personalization profile. If you are a minor, you can use these services only if used together with your parents or legal guardians. If you are a minor, you should seek guidance from your parents. </p>
+          <p>Public Disclosure We strive to protect personally identifiable information by collecting only information necessary to deliver our services. All information that may be collected at this site or through a web or mobile application becomes public record that may be subject to inspection and copying by the public, unless an exemption in law exists. </p>
+          <p>Access and Correction of Personal Information You can review any personal information we collect about you. You may recommend changes to your personal information you believe is in error by submitting a written request that credibly shows the error. If you believe that your personal information is being used for a purpose other than what was intended when submitted, you may contact us. In all cases, we will take reasonable steps to verify your identity before granting access or making corrections. See Contact Information section. </p>
+          <p>Cookies A cookie is a small data file which may include an anonymous unique identifier that is sent to your browser from a website's computers and may either be used only during your session (a "session" cookie) or may be stored on your computer's hard drive (a "persistent" cookie). Cookies can contain data about user movement during the visit to the Web site. If your browser software is set to allow cookies, a website can send its own cookie to you. </p>
+          <p>Cookies are a mechanism for maintaining continuity during a user's visit to a website. They allow data to be maintained for users' benefit as they navigate a site. This is referred to as "session" or "management" cookie. These cookies go away when you terminate your visit to the website as they are maintained only in your browser's active memory during your session. Cookies may also be stored on your computer so that you can be recognized by a website on subsequent visits. They are read by the website that sent them whenever you re-visit the website. They are often used on websites that require you to login so that you can avoid having to enter all of your login information every visit. They may store information on your unique identifier and the areas of the website you have visited before. These cookies are stored on your computer's hard drive after you have left your website visit and consequently are often referred to as "persistent" cookies. </p>
+          <p>You can configure your browser to accept all cookies, reject all cookies, or notify you when a cookie is sent. (Each browser is different, so check the "Help" menu of your browser to learn how to change your cookie preferences.) </p>
+          <p>Presently, the One Coast One Community website uses persistent cookies on some of its web applications. </p>
+          <p>Disclaimer One Coast One Community website has links to other websites. These may include links to websites operated by other government agencies, nonprofit organizations and private businesses. When you link to another site, you are no longer on the One Coast One Community website and this Privacy Policy will not apply. When you link to another website, you are subject to the privacy policy of that new site. </p>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="termsModalLabel">Terms of Service</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: left;">
+        
+          <p>
+            These Terms govern your access to, usage of all content, Product and Services available at http://onecoastonecommunity.org/ website operated by Permanent Forum of Binational Waters. 
+          </p>
+          <p>
+            Your access to our services are subject to your acceptance, without modification, of all of the terms and conditions contained herein and all other operating rules and policies published and that may be published from time to time by us. 
+          </p>
+          <p>
+            Please read the Agreement carefully before accessing or using our Services. By accessing or using any part of our Services, you agree to be bound by these Terms. If you do not agree to any part of the terms of the Agreement, then you may not access or use our Services. 
+          </p>
+          <p>
+            Intellectual Property The Agreement does not transfer from Us to you any of Ours or third party intellectual property, and all right, title, and interest in and to such property will remain (as between the parties) solely with Permanent Forum of Binational Waters and its licensors. 
+          </p>
+          <p>
+            Third Party Services In using the Services, you may use third-party services, products, software, embeds, or applications developed by a third party (“Third Party Services”). 
+          </p>
+          <p>
+            If you use any Third Party Services, you understand that: 
+          </p>
+          <p>
+            Any use of a Third Party Service is at your own risk, and we shall not be responsible or liable to anyone for Third Party websites or Services. You acknowledge and agree that We shall not be responsible or liable for any damage or loss caused or alleged to be caused by or in connection with the use of any such content, goods or services available on or through any such web sites or services. 
+          </p>
+          <p>
+            Accounts Where use of any part of our Services requires an account, you agree to provide us with complete and accurate information when you register for an account. 
+          </p>
+          <p>
+            You will be solely responsible and liable for any activity that occurs under your account. You are responsible for keeping your account information up-to-date and for keeping your password secure. 
+          </p>
+          <p>
+            You are responsible for maintaining the security of your account that you use to access the Service. You shall not share or misuse your access credentials. You must notify us immediately of any unauthorized uses of your account or upon becoming aware of any other breach of security. 
+          </p>
+          <p>
+            Termination We may terminate or suspend your access to all or any part of our Services at any time, with or without cause, with or without notice, effective immediately. 
+          </p>
+          <p>
+            If you wish to terminate the Agreement or your Permanent Forum of Binational Waters account, you may simply discontinue using our Services. 
+          </p>
+          <p>
+            All provisions of the Agreement which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability. 
+          </p>
+          <p>
+            Disclaimer Our Services are provided “AS IS.” and “AS AVAILABLE” basis. Permanent Forum of Binational Waters and its suppliers and licensors hereby disclaim all warranties of any kind, express or implied, including, without limitation, the warranties of merchantability, fitness for a particular purpose and non-infringement. Neither Permanent Forum of Binational Waters, nor its suppliers and licensors, makes any warranty that our Services will be error free or that access thereto will be continuous or uninterrupted. You understand that you download from, or otherwise obtain content or services through, our Services at your own discretion and risk. 
+          </p>
+          <p>
+            Jurisdiction and Applicable Law Except to the extent any applicable law provides otherwise, the Agreement and any access to or use of our Services will be governed by the laws of United States. 
+          </p>
+          <p>
+            The proper venue for any disputes arising out of or relating to the Agreement and any access to or use of our Services will be the state and federal courts located in United States. 
+          </p>
+          <p>
+            Changes Permanent Forum of Binational Waters reserves the right, at our sole discretion, to modify or replace these Terms at any time. 
+          </p>
+          <p>
+            If we make changes that are material, we will let you know by posting on our website, or by sending you an email or other communication before the changes take effect. The notice will designate a reasonable period of time after which the new terms will take effect. 
+          </p>
+          <p>
+            If you disagree with our changes, then you should stop using our Services within the designated notice period, or once the changes become effective. 
+          </p>
+          <p>
+            Your continued use of our Services will be subject to the new terms. 
+          </p>
+          <p class="lead">Contact </p>
+          <p>
+            One Coast One Community Contact Information To offer comments about the One Coast One Community websites, or to comment about the information presented in this Privacy Policy, please feel free to email us at:management@binationalwater.org 
+          </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="monitorModal" tabindex="-1" aria-labelledby="monitorModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="monitorModal">Monitoring</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: left;">
+          <img src="./images/UnderContruction_v2.png">        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+.fullscreen-bg {    
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 84vh;
+            width: 100%;
+            overflow: hidden;
+            object-fit: cover;
+            z-index: -99;
+            position: relative;
+            filter: brightness(75%);
+    }
+
+    .text-vid {
+        filter: brightness(100%);
+            position: absolute;
+            top:30%;
+     }    
+</style>
+
+
+
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/langs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

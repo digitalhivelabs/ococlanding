@@ -1,0 +1,14 @@
+{
+    "en": {
+        "welcome_message": "Welcome to Our Website!",
+        "about_us": "Learn more about us...",
+        "footer_text": "© 2023 All rights reserved."
+    },
+
+    "es": {
+        "welcome_message": "Bienvenidos a nuestro sitio!",
+        "about_us": "Aprenda mas...",
+        "footer_text": "© 2023 Todos los derechos reservados."
+    }    
+
+}
