@@ -1,0 +1,16 @@
+<div class="container mt-5">
+
+    <div *ngIf="!(_accountService.currentUser$ | async)" class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <app-profile-register (cancelRegister)="cancelRegisterMode($event)"></app-profile-register>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <form *ngIf="!(_accountService.currentUser$ | async)" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
+    <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text" placeholder="Username">
+    <input name="password" [(ngModel)]="model.password" class="form-control me-2" type="password" placeholder="Password">
+  <button class="btn btn-success" type="submit">Login</button>
+</form> -->

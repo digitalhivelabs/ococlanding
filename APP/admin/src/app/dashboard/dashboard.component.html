@@ -1,0 +1,271 @@
+
+<div *ngIf="showWelcome" class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <!-- <div class="card-header card-header-text">
+        <h4 class="card-title">Welcome Message</h4>
+      </div> -->
+      <div class="card-content">     
+        <!---->
+        <div class="container">
+          <h1>Welcome to the One Coast, One Community Platform</h1>
+          <div class="section">
+              <p>The "One Coast, One Community" project is a pioneering initiative that unites the coastal communities of San Diego, Tijuana, and Playas de Rosarito in a collaborative effort to enhance the resilience of our shared coastal environments. This innovative project, spearheaded by the Permanent Forum of Binational Waters (PFBW) and the Proyecto Fronterizo de Educación Ambiental (PFEA), aims to integrate scientific research with community action to address critical environmental challenges.</p>
+          </div>
+          <h2>Our Mission</h2>
+          <div class="section">
+              <p>Our mission is to foster a holistic approach to coastal resilience, acknowledging the interconnectivity of ecosystems and the communities that depend on them. By leveraging the expertise of environmental scientists, policymakers, educators, and community activists, we strive to create a sustainable future for our coastal regions.</p>
+          </div>
+          <h2>Our Platform</h2>
+          <div class="section">
+              <p>The One Coast, One Community platform aims to become the cornerstone of our efforts to understand our coastlines. This is the first version of the platform, and we will be adding more features shortly. It currently features:</p>
+              <ul>
+                  <li><strong>Data Repository:</strong> The platform serves as a comprehensive repository of data. In this first phase, we focus on including historical data on water quality from the early 2000s for both the US and Mexico.</li>
+                  <li><strong>Data Sorting and Filtering:</strong> Users can sort and filter water quality data by year, monitoring entity, parameter, and location, enabling detailed and specific data analysis.</li>
+                  <li><strong>Data Visualization:</strong> The platform allows users to visualize water quality results through interactive graphs, making it easier to interpret complex data.</li>
+                  <li><strong>Dashboard:</strong> An intuitive dashboard illustrates the number of entries by monitoring entity for each year, providing a clear overview of data distribution and trends.</li>
+                  <li><strong>Document and Map Uploads:</strong> The platform includes features for uploading and managing documents and maps, facilitating comprehensive data integration and accessibility.</li>
+              </ul>
+          </div>
+      </div>
+
+      <hr/>
+
+      <div class="container">
+        <h1>Bienvenido a la Plataforma de Una Costa, Una Comunidad</h1>
+        <div class="section">
+            <p>El proyecto "Una Costa, Una Comunidad" es una iniciativa pionera que une a las comunidades costeras de San Diego, Tijuana y Playas de Rosarito en un esfuerzo colaborativo para mejorar la resiliencia de nuestros entornos costeros compartidos. Este proyecto innovador, encabezado por el Foro Permanente de Aguas Binacionales (PFBW) y Proyecto Fronterizo de Educación Ambiental (PFEA), tiene como objetivo integrar la investigación científica con la acción comunitaria para abordar desafíos ambientales críticos.</p>
+        </div>
+        <h2>Nuestra Misión</h2>
+        <div class="section">
+            <p>Nuestra misión es fomentar un enfoque holístico para la resiliencia costera, reconociendo la interconexión de los ecosistemas y las comunidades que dependen de ellos. Aprovechando la experiencia de científicos ambientales, formuladores de políticas, educadores y activistas comunitarios, nos esforzamos por crear un futuro sostenible para nuestras regiones costeras.</p>
+        </div>
+        <h2>Nuestra Plataforma</h2>
+        <div class="section">
+            <p>La plataforma One Coast, One Community tiene como objetivo convertirse en la piedra angular de nuestros esfuerzos para comprender nuestras costas. Esta es la primera versión de la plataforma y pronto añadiremos más funciones. Actualmente, cuenta con:</p>
+            <ul>
+                <li><strong>Repositorio de Datos:</strong> La plataforma sirve como un repositorio integral de datos. En esta primera fase, nos enfocamos en incluir datos históricos sobre la calidad del agua desde principios de los años 2000 tanto en los EE. UU. como en México.</li>
+                <li><strong>Ordenación y Filtrado de Datos:</strong> Los usuarios pueden ordenar y filtrar los datos de calidad del agua por año, entidad de monitoreo, parámetro y ubicación, permitiendo un análisis de datos detallado y específico.</li>
+                <li><strong>Visualización de Datos:</strong> La plataforma permite a los usuarios visualizar los resultados de la calidad del agua a través de gráficos interactivos, facilitando la interpretación de datos complejos.</li>
+                <li><strong>Panel de Control:</strong> Un panel de control intuitivo ilustra el número de entradas por entidad de monitoreo para cada año, proporcionando una visión clara de la distribución y tendencias de los datos.</li>
+                <li><strong>Carga de Documentos y Mapas:</strong> La plataforma incluye funciones para cargar y gestionar documentos y mapas, facilitando la integración y accesibilidad completa de los datos.</li>
+            </ul>
+        </div>
+    </div>      
+        <!---->
+
+        <button (click)="onCloseWelcome()" class="btn btn-danger">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-specimen-summary [dataFromFilter]="_dataFiltered"></app-specimen-summary>
+<app-specimen-charts [dataFromFilter]="_dataFiltered"></app-specimen-charts>
+<app-specimens-report (newItemEvent)="onFilterApplied($event)"></app-specimens-report>
+<!-- <app-samples></app-samples> -->
+<!-- <app-parameters></app-parameters> -->
+
+
+
+<!-- <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header">
+          <div class="icon icon-warning">
+            <span class="material-icons">equalizer</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <p class="category"><strong>Visits</strong></p>
+          <h3 class="card-title">70,340</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons text-info">info</i>
+            <a href="#pablo">See detailed report</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header">
+          <div class="icon icon-rose">
+            <span class="material-icons">shopping_cart</span>
+
+          </div>
+        </div>
+        <div class="card-content">
+          <p class="category"><strong>Orders</strong></p>
+          <h3 class="card-title">102</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">local_offer</i> Product-wise sales
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header">
+          <div class="icon icon-success">
+            <span class="material-icons">
+              attach_money
+            </span>
+
+          </div>
+        </div>
+        <div class="card-content">
+          <p class="category"><strong>Revenue</strong></p>
+          <h3 class="card-title">$23,100</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">date_range</i> Weekly sales
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header">
+          <div class="icon icon-info">
+
+            <span class="material-icons">
+              follow_the_signs
+            </span>
+          </div>
+        </div>
+        <div class="card-content">
+          <p class="category"><strong>Followers</strong></p>
+          <h3 class="card-title">+245</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">update</i> Just Updated
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <div class="row ">
+    <div class="col-lg-7 col-md-12">
+      <div class="card" style="min-height: 485px">
+        <div class="card-header card-header-text">
+          <h4 class="card-title">Employees Stats</h4>
+          <p class="category">New employees on 15th December, 2016</p>
+        </div>
+        <div class="card-content table-responsive">
+          <table class="table table-hover">
+            <thead class="text-primary">
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Bob Williams</td>
+                <td>$23,566</td>
+                <td>USA</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Mike Tyson</td>
+                <td>$10,200</td>
+                <td>Canada</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Tim Sebastian</td>
+                <td>$32,190</td>
+                <td>Netherlands</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Philip Morris</td>
+                <td>$31,123</td>
+                <td>Korea, South</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Minerva Hooper</td>
+                <td>$23,789</td>
+                <td>South Africa</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Hulk Hogan</td>
+                <td>$43,120</td>
+                <td>Netherlands</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Angelina Jolie </td>
+                <td>$12,140</td>
+                <td>Australia</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-12">
+      <div class="card" style="min-height: 485px">
+        <div class="card-header card-header-text">
+          <h4 class="card-title">Activities</h4>
+        </div>
+        <div class="card-content">
+          <div class="streamline">
+            <div class="sl-item sl-primary">
+              <div class="sl-content">
+                <small class="text-muted">5 mins ago</small>
+                <p>Williams has just joined Project X</p>
+              </div>
+            </div>
+            <div class="sl-item sl-danger">
+              <div class="sl-content">
+                <small class="text-muted">25 mins ago</small>
+                <p>Jane has sent a request for access to the project folder</p>
+              </div>
+            </div>
+            <div class="sl-item sl-success">
+              <div class="sl-content">
+                <small class="text-muted">40 mins ago</small>
+                <p>Kate added you to her team</p>
+              </div>
+            </div>
+            <div class="sl-item">
+              <div class="sl-content">
+                <small class="text-muted">45 minutes ago</small>
+                <p>John has finished his task</p>
+              </div>
+            </div>
+            <div class="sl-item sl-warning">
+              <div class="sl-content">
+                <small class="text-muted">55 mins ago</small>
+                <p>Jim shared a folder with you</p>
+              </div>
+            </div>
+            <div class="sl-item">
+              <div class="sl-content">
+                <small class="text-muted">60 minutes ago</small>
+                <p>John has finished his task</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div> -->

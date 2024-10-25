@@ -1,0 +1,27 @@
+
+<div class="row" *ngIf="_summaryData">
+    <div *ngFor="let itm of _summaryData" class="col-12 col-md-3 d-flex">
+        <div class="card flex-fill border-0 illustration" *ngIf="itm">
+            <div class="card-body p-0 d-flex flex-fill">
+                <div class="row g-0 w-100">
+                    <div class="col-8">
+                        <div class="p-1 m-1">
+                            <h4>{{itm.title}}</h4>
+                            <p class="mb-0">{{itm.month}}</p>
+                            <p class="mb-0">{{itm.place}}</p>
+                            <p class="mb-0">{{itm.samples}}</p>
+                            <p class="mb-0">{{itm.parameter}}</p>
+                        </div>
+                    </div>
+                    <div class="col-4 align-self-center text-center px-2">
+                        <!-- <app-progress [value]="({ legend: itm.legend, icon: itm.icon, percentage: itm.percentage })"></app-progress> -->
+                         <img *ngIf="itm.title == 'CESPT'" src="./assets/images/cespt.png" class="img-fluid" alt="">
+                         <img *ngIf="itm.title == 'PFEA'" src="./assets/images/PFEA.png" class="img-fluid" alt=""> 
+                         <img *ngIf="itm.title == 'SD County'" src="./assets/images/sdc.png" class="img-fluid" alt=""> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+  

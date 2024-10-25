@@ -1,0 +1,174 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card card-user">
+        <div class="card-header">
+          <h2 class="card-title">Documents Catalog</h2>
+
+          <nav class="navbar navbar-light bg-light">
+            <form class="container-fluid justify-content-start">
+              <button class="btn btn-sm btn-outline-success mr-2" (click)="onNew()" type="button">
+                <i style="vertical-align: middle;" class="material-icons">add</i>
+                New
+              </button>
+              <button class="btn btn-sm btn-outline-success mr-2" type="button">
+                <i style="vertical-align: middle;" class="material-icons">save</i>
+                Save
+              </button>
+              <button class="btn btn-sm btn-outline-warning mr-2" type="button">
+                <i style="vertical-align: middle;" class="material-icons">cancel</i>
+                Cancel
+              </button>
+              <button class="btn btn-sm btn-outline-danger mr-2" type="button">
+                <i style="vertical-align: middle;" class="material-icons">delete</i>
+                Delete
+              </button>
+              <button class="btn btn-sm btn-outline-success mr-2" (click)="onReport()" type="button">
+                <i style="vertical-align: middle;" class="material-icons">list</i>
+                Report
+              </button>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Document Title" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">
+                  <i style="vertical-align: middle;" class="material-icons">search</i>
+                  Search
+                </button>
+              </form>              
+            </form>
+          </nav>
+
+
+
+        </div>
+        <div class="card-body">     
+            <!--BODY-->
+
+            <div class="alert alert-warning">
+              <p class="lead">
+                <strong>Note: </strong>This is for a demo porpouses only.
+              </p>
+            </div>
+
+
+            <div class="row" *ngIf="!(_currentOperation == 'report')">
+              <div class="col-8">
+                <form name="frmDocuments">
+                  <div class="row mb-3">
+                      <div class="col-md-12">
+                          <label>Title: </label>
+                          <input type="text" class="form-control" [(ngModel)]="currentModel.title" name="title" placeholder="Title"/>
+                      </div>
+                  </div>
+  
+                  <div class="row mb-3">
+                      <div class="col-md-6 pr-1">
+                          <label>Document Type: </label>
+                          <select class="form-control" name="location" [(ngModel)]="currentModel.docType">
+                              <option>Monthly Report</option>
+                              <option>Maps</option>
+                              <option>Magazine</option>
+                          </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Author(s): </label>
+                        <input type="text" class="form-control" [(ngModel)]="currentModel.author" name="author" placeholder="Author"/>
+                    </div>
+                    <!-- <div class="col-md-4 pl-1">
+                        <label>Select document to upload: </label>
+                          <div class="input-group col-xs-12">
+                              <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Document">
+                              <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                              </span>
+                            </div>                                
+                      </div> -->
+                  </div>
+  
+                  <div class="row mb-3">
+                    <label>Write the abstrac of the document you intend to submit: </label>
+                      <div class="col-md-12">
+                          <textarea class="form-control" placeholder="Add the abstracto of the document..." [(ngModel)]="currentModel.abstract" name="description" rows="6"></textarea>
+                      </div>
+                  </div>
+      
+                  <!-- <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+                  <button class="btn btn-light ms-2" (click)="cancelUpdate(null)">Cancel</button> -->
+                </form>
+  
+              </div>
+              <div class="col-4">
+                <h3>Select document and thumbnail to upload.</h3>
+                <img src="./assets/images/upload.PNG" class="img-fluid"/>
+              </div>
+            </div>
+
+              <div class="row" *ngIf="(_currentOperation == 'report')">
+                <h3 class="card-title">Uploaded documents</h3>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>...</th>
+                      <th class="col-2"> Title </th>
+                      <th> Type </th>
+                      <th> Author </th>
+                      <th> Updloaded</th>
+                      <th class="col-2"> ... </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td rowspan="2">
+                        <img src="./assets/images/book.PNG"/>
+                      </td>
+                      <td>Hidrologia de superficie, Operacion de rios y embalses en cuencas hidrologicas</td>
+                      <td>eBook</td>
+                      <td>Jose Luis Ayuso Munoz, Oscar Castro Orgaz</td>
+                      <td>Jun.20.2024</td>
+                      <td>
+                        <i style="vertical-align: middle;" class="material-icons">download</i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="5">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aspernatur esse consectetur maiores laboriosam, quam nulla quidem odio explicabo maxime vero delectus quis. Illum, sit dolores ipsa expedita officia fuga, quo unde, aliquam deserunt iure cumque. Cupiditate, saepe! Recusandae excepturi eaque corrupti nemo eveniet, nihil laborum odio repellat natus quis quaerat temporibus maxime illum nam sit possimus est minus rerum exercitationem blanditiis corporis? Praesentium accusamus mollitia libero quia laudantium fugiat repudiandae numquam iste, minus, illum nihil? Distinctio vel, ipsam odio autem nesciunt maiores quos eos necessitatibus culpa perferendis cum non unde, illum reprehenderit commodi! Pariatur ipsum, dolor ratione architecto laudantium delectus ab ipsa aliquid reprehenderit minus laboriosam sequi rerum adipisci mollitia cupiditate vero molestiae quia dolorem esse quasi sit repudiandae? Minus molestiae, veniam similique explicabo officia sapiente doloremque dignissimos fugiat numquam veritatis eveniet possimus sit ipsam officiis optio assumenda expedita ipsum. Nesciunt a cupiditate molestias voluptatem odit atque veritatis soluta suscipit facere, quos nihil officiis maxime voluptatum distinctio itaque provident autem. Laborum ratione maiores dolor nisi ipsam! Recusandae, aliquam eveniet minus maxime ea nulla deleniti est vel necessitatibus voluptatibus doloremque, amet quos corporis magnam dolore cupiditate fugiat obcaecati id! Magnam provident vitae sunt unde quam doloribus, maiores porro quod eligendi? Architecto, facere dolorem? Dignissimos ducimus eligendi numquam amet, sed ullam nemo at, asperiores fugit, praesentium unde. Odio veritatis consequatur harum deserunt, adipisci, ad odit rem, reprehenderit voluptatibus quidem assumenda maxime voluptates nesciunt eligendi. Ex illo facere laborum fugit ullam ipsa alias blanditiis error sit totam quas, tempora quam vel dolor suscipit aspernatur odio sequi minus, unde tempore commodi animi deserunt? Est, aut. Ipsa mollitia rem necessitatibus dolorum architecto suscipit adipisci sed pariatur omnis, eius atque nam recusandae maiores, reprehenderit eos quidem impedit a quos aspernatur dolores neque. Doloribus eum eius autem quas, id, mollitia exercitationem eos vel consequuntur repellat vitae repellendus amet cupiditate cumque saepe nostrum sed nemo iste magnam excepturi incidunt ad ipsa in. Reiciendis expedita debitis voluptate vitae ipsam quia ipsum provident aliquam! Doloribus maiores reprehenderit ducimus, sunt aliquid dicta alias expedita necessitatibus qui labore, sequi aut magni voluptatum velit magnam vero voluptas numquam! Laudantium, ex explicabo quisquam esse itaque, illo temporibus est blanditiis, nostrum totam laboriosam harum libero pariatur debitis dicta dolorem quasi tenetur quod. Ipsa perferendis quaerat est laudantium dolor fugiat quod accusamus, temporibus voluptate dignissimos doloremque quae inventore dicta excepturi, incidunt officiis id earum aliquid harum molestiae doloribus. Eos error, perspiciatis nostrum debitis nemo provident. Asperiores suscipit corporis dignissimos temporibus amet, quod doloribus aliquid fugiat cum, sit eveniet consequatur. Excepturi deserunt quasi facilis eveniet. Expedita ullam nemo quidem aspernatur consectetur cum praesentium dolorum dolor, quia aliquam iusto nam, eum facere dignissimos ex modi atque nihil ea doloribus natus! Delectus explicabo dolorem, corrupti sunt perspiciatis voluptatum. Debitis ut voluptate suscipit ipsam delectus, illum numquam animi consequatur libero adipisci soluta quam commodi assumenda, iusto quo aliquam perferendis odit molestias minus consectetur accusantium sequi minima nemo corrupti. A, impedit minus! Ipsa, quidem neque? Reiciendis, impedit laborum. Mollitia accusamus ipsum similique a? Neque quos ratione dignissimos eligendi vitae aut.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">
+                        <img src="./assets/images/book2.PNG"/>
+                      </td>
+                      <td>Hidrologia de superficie, Operacion de rios y embalses en cuencas hidrologicas</td>
+                      <td>eBook</td>
+                      <td>Jose Luis Ayuso Munoz, Oscar Castro Orgaz</td>
+                      <td>Jun.20.2024</td>
+                      <td>
+                        <i style="vertical-align: middle;" class="material-icons">download</i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="5">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus cupiditate doloremque, ullam autem ipsum reiciendis excepturi cumque magni eligendi harum, ab illo dolore voluptas animi at! Eum accusamus inventore sapiente atque consequatur unde nobis hic perferendis, quaerat, neque et dolores esse fugit cum repudiandae vitae delectus error excepturi. Ea vel culpa porro, modi voluptate, corporis iure asperiores delectus omnis officia earum iste quae, eveniet molestiae nemo dicta beatae nam sequi laborum quos cum perferendis quam quis? Quos mollitia incidunt, atque nulla dolorem minus tenetur aliquam laboriosam sapiente ad officiis, at alias illum animi delectus, similique laudantium obcaecati expedita iusto error accusamus beatae est ea! Deleniti rerum minus delectus eius. Quia magnam et voluptate consequuntur culpa rerum rem natus totam, ad at accusamus dolorem quidem quisquam harum molestias illo debitis iure eligendi dignissimos velit repellat? Animi voluptatem provident omnis doloribus dolores alias dolorem illo saepe doloremque voluptas ipsa aliquid, culpa eum repellendus quam debitis modi minus sed, in officiis neque consectetur mollitia possimus harum? Voluptatum cumque provident atque, praesentium ipsam magni ipsum adipisci veritatis totam doloremque cum reiciendis voluptas distinctio necessitatibus aperiam hic nostrum. Aut maiores dolor commodi minima distinctio dignissimos totam ad voluptates ratione nam qui cumque at ut cum veritatis, repudiandae quis. Nemo animi dolor consequuntur numquam, deleniti corrupti, error unde nostrum, tempora aspernatur sapiente. Aperiam quasi nulla repellendus blanditiis ex saepe ab vitae ea necessitatibus, nemo illo corporis voluptas, eos fugiat! Unde, veritatis provident? Aliquam amet voluptate similique maiores impedit magni, ab odio, atque, nobis consectetur aliquid. Nostrum.
+                      </td>
+                    </tr>
+
+                    <!-- <tr *ngFor="let doc of models">
+                      <td> {{doc.title}} </td>
+                      <td> {{doc.docType}} </td>
+                      <td> {{doc.author}} </td>
+                      <td> {{doc.uploadDate | date:"MMM dd, yyyy"}} </td>
+                      <td>
+                          <button *ngIf="!doc.editMode" type="button" (click)="edit(doc)" class="btn btn-outline-success btn-sm">Edit</button>
+                          <div *ngIf="doc.editMode">
+                              <button type="button" (click)="update(doc)" class="btn btn-outline-success btn-sm">Update</button>
+                              <button type="button" (click)="cancelUpdate(doc)" class="btn btn-outline-danger btn-sm ms-2">Cancel</button>
+                          </div>
+                      </td>
+                    </tr> -->
+                  </tbody>
+                </table>
+              </div>
+
+            <!--end BODY-->
+        </div>
+      </div>
+    </div>
+  </div>

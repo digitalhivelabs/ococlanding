@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card card-user">
+        <div class="card-header card-header-text">
+          <h4 class="card-title">Specimens Collection Report</h4>
+        </div>
+        <div class="card-content">     
+            <!-- Report -->
+            <div class="card-body">
+                <div class="row alert alert-info">
+                    <div class="col">
+                        <label>Year:</label>
+                        <select class="form-control" name="year" (change)="onChangeFilter('year')" [(ngModel)]="_currentFilter.year">
+                            <option></option>      
+                            <option *ngFor="let year of _filters?.years"
+                                [ngValue]="year">{{ year }}</option>                
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Laboratory:</label>
+                        <select class="form-control" name="laboratory" (change)="onChangeFilter('lab')" [(ngModel)]="_currentFilter.laboratory">
+                            <option></option>      
+                            <option *ngFor="let laboratory of _filters?.laboratories"
+                                [value]="laboratory">{{ laboratory }}</option>                
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Location:</label>
+                        <select class="form-control" name="location" (change)="onChangeFilter('loc')" [(ngModel)]="_currentFilter.location">
+                            <option></option>      
+                            <option *ngFor="let location of _filters?.locations"
+                                [value]="location">{{ location }}</option>                
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Parameter:</label>
+                        <select class="form-control" name="parameter" (change)="onChangeFilter('param')" [(ngModel)]="_currentFilter.parameter">
+                            <option></option>      
+                            <option *ngFor="let parameter of _filters?.parameters"
+                                [value]="parameter">{{ parameter }}</option>                
+                        </select>
+                    </div>
+                    <div class="col align-bottom pt-3">
+                        <button type="button" class="btn btn-primary mx-2" (click)="onApplyFilter()">Apply Filter</button>
+                        <button type="button" class="btn btn-success" (click)="onClearFilters()">Clear Filters</button>
+                    </div>
+                </div>
+               <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date Collected</th>
+                            <th scope="col">Laboratory</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Parameter</th>
+                            <th scope="col">Value</th>
+                            <th scope="col">Tendency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let itm of _filteredData">
+                            <th scope="row">{{itm.specimenDate | date: 'dd.MMM.yyyy'}}</th>
+                            <td>{{itm.laboratory}}</td>
+                            <td>{{itm.point}}</td>
+                            <td>{{itm.parameter}}</td>
+                            <td>{{itm.displayValue}}</td>
+                            <td>
+                                <i *ngIf="(itm.tendencyIcon == 'U')" class="material-icons">moving</i> 
+                                <i *ngIf="(itm.tendencyIcon == 'D')" class="material-icons">trending_down</i> 
+                                {{itm.tendency}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <!-- End Report -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+

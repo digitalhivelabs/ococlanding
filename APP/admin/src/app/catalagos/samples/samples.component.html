@@ -1,0 +1,426 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card card-user">
+        <div class="card-header">
+          <h2 class="card-title">Specimens Catalog</h2>
+
+          <nav class="navbar navbar-light bg-light">
+            <form class="container-fluid justify-content-start">
+              <button class="btn btn-sm btn-outline-success mr-2" (click)="onNew()" type="button">
+                <i style="vertical-align: middle;" class="material-icons">add</i>
+                New
+              </button>
+              <button class="btn btn-sm btn-outline-success mr-2" type="button">
+                <i style="vertical-align: middle;" class="material-icons">save</i>
+                Save
+              </button>
+              <button class="btn btn-sm btn-outline-warning mr-2" type="button">
+                <i style="vertical-align: middle;" class="material-icons">cancel</i>
+                Cancel
+              </button>
+              <button class="btn btn-sm btn-outline-danger mr-2" type="button">
+                <i style="vertical-align: middle;" class="material-icons">delete</i>
+                Delete
+              </button>
+              <button class="btn btn-sm btn-outline-success mr-2" (click)="onSummary()" type="button">
+                <i style="vertical-align: middle;" class="material-icons">addchart</i>
+                Data Summary
+              </button>
+              <button class="btn btn-sm btn-outline-success mr-2" (click)="onReport()" type="button">
+                <i style="vertical-align: middle;" class="material-icons">list</i>
+                Report
+              </button>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Document Title" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">
+                  <i style="vertical-align: middle;" class="material-icons">search</i>
+                  Search
+                </button>
+              </form>              
+            </form>
+          </nav>
+
+        </div>
+        <div class="card-body">     
+            <!--BODY-->
+
+            <div class="alert alert-warning">
+              <p class="lead">
+                <strong>Note: </strong>This is for a demo porpouses only.
+              </p>
+            </div>
+
+            <form name="frmDocuments" *ngIf="(_currentOperation == 'catalog')">
+                <div class="row mb-3">
+                    <div class="col-md-4 pr-1">
+                        <label>Country</label>
+                        <select class="form-control" id="country" name="country" [(ngModel)]="currentCountry" (change)="countrySelected()">
+                            <option *ngFor="let itm of _countries" [ngValue]="itm">{{itm.displayName}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 pr-1">
+                      <label >State</label>
+                      <select class="form-control" id="state" name="state" [(ngModel)]="currentState">
+                          <option *ngFor="let itm of _states" [ngValue]="itm">{{itm.displayName}}</option>
+                      </select>
+                  </div>
+                  <div class="col-md-4 pl-1">
+                        <label>Select document</label>
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Document">
+                            <span class="input-group-append">
+                              <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                            </span>
+                          </div>                                
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-md-2 pr-1">
+                      <label>Categories</label>
+                      <select class="form-control" id="category" name="category" [(ngModel)]="currentCategory" (change)="categorySelected()">
+                          <option *ngFor="let itm of _categories" [ngValue]="itm">{{itm.displayName}}</option>
+                      </select>
+                  </div>
+                  <div class="col-md-2 pr-1">
+                    <label>Sub Category</label>
+                    <select class="form-control" id="subcategory" name="subcategory" [(ngModel)]="currentSubCategory" (change)="subCategorySelected()">
+                        <option *ngFor="let itm of _subCategories" [ngValue]="itm">{{itm.displayName}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3 pl-1">
+                  <label>Place</label>
+                  <select class="form-control" id="place" name="place" [(ngModel)]="currentPlace">
+                      <option *ngFor="let itm of _places" [ngValue]="itm">{{itm.displayName}}</option>
+                  </select>
+                </div>
+                <div class="col-md-3 pl-1">
+                  <label>Point</label>
+                  <select class="form-control" id="point" name="point" [(ngModel)]="currentPoint">
+                      <option *ngFor="let itm of _points" [ngValue]="itm">{{itm.displayName}}</option>
+                  </select>
+                </div>
+                <div class="col-md-2 pl-1">
+                  <label>Collected Date</label>
+                  <input type="date" name="collectedDate" [(ngModel)]="currentModel.collectedDate" class="form-control" />
+                </div>
+              </div>
+
+
+                <div class="row mb-3">
+                    <label for="place">Comments</label>
+                    <div class="col-md-12">
+                        <textarea class="form-control" placeholder="Add Some description about the samples to be uploaded..." id="comments" name="comments" [(ngModel)]="currentModel.comments" rows="4"></textarea>
+                    </div>
+                </div>
+    
+                <!-- <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+                <button class="btn btn-light ms-2" (click)="cancel()">Cancel</button> -->
+              </form>
+
+              <div *ngIf="(_currentOperation == 'report')">
+                <h3 class="card-title">Uploaded documents</h3>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th> Country </th>
+                      <th> State </th>
+                      <th> Category </th>
+                      <th> Sub Category </th>
+                      <th> Place </th>
+                      <th> Point </th>
+                      <th> Collected</th>
+                      <th class="col-2"> ... </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let itm of _data">
+                      <td> {{itm.country.displayName}} </td>
+                      <td> {{itm.state.displayName}} </td>
+                      <td> {{itm.category.displayName}} </td>
+                      <td> {{itm.subCategory.displayName}}</td>
+                      <td> {{itm.place.displayName}}</td>
+                      <td> {{itm.point.displayName}}</td>
+                      <td> {{itm.collectedDate | date:"MMM dd, yyyy"}}</td>
+                      <td>
+                          <button *ngIf="!_editMode" type="button" (click)="edit(itm)" class="btn btn-outline-success btn-sm">Edit</button>
+                          <!-- <div *ngIf="_editMode">
+                              <button type="button" (click)="update(null)" class="btn btn-outline-success btn-sm">Update</button>
+                              <button type="button" (click)="cancelUpdate(null)" class="btn btn-outline-danger btn-sm ms-2">Cancel</button>
+                          </div> -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+  
+              </div>
+
+              <div>
+
+                <div class="row">
+                  <div class="col-3">
+                    <div class="alert alert-success">
+                      <div class="row">
+                        <div class="col">
+                          <div class="progress-bar">
+                            <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;">75%</progress>
+                          </div>                          
+                        </div>
+                        <div class="col">
+                          <h2 class="m-0">pH</h2>
+                          <div><strong>Range:</strong></div>
+                          <div>1 - 10</div>
+                          <div><strong>Current:</strong></div>
+                          <div>12</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <div class="alert alert-info">
+                      <div class="row">
+                        <div class="col">
+                          <div class="progress-bar">
+                            <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;">75%</progress>
+                          </div>                          
+                        </div>
+                        <div class="col">
+                          <h2 class="m-0">e-Coli</h2>
+                          <div><strong>Range:</strong></div>
+                          <div>1 - 10</div>
+                          <div><strong>Current:</strong></div>
+                          <div>12</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <div class="alert alert-warning">
+                      <div class="row">
+                        <div class="col">
+                          <div class="progress-bar">
+                            <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;">75%</progress>
+                          </div>                          
+                        </div>
+                        <div class="col">
+                          <h2 class="m-0">pH</h2>
+                          <div><strong>Range:</strong></div>
+                          <div>1 - 10</div>
+                          <div><strong>Current:</strong></div>
+                          <div>12</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <div class="alert alert-danger">
+                      <div class="row">
+                        <div class="col">
+                          <div class="progress-bar">
+                            <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;">75%</progress>
+                          </div>                          
+                        </div>
+                        <div class="col">
+                          <h2 class="m-0">e-Coli</h2>
+                          <div><strong>Range:</strong></div>
+                          <div>1 - 10</div>
+                          <div><strong>Current:</strong></div>
+                          <div>12</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <form name="frmDocuments">
+                  <div class="row">
+                      <div class="col-md-2 pr-1">
+                          <label>Laboratory</label>
+                          <select class="form-control" id="category" name="category">
+                              <option></option>
+                              <option>Lab 1</option>
+                              <option>Lab 2</option>
+                              <option>Lab 3</option>
+                              <option>Lab 4</option>
+                          </select>
+                      </div>
+                      <div class="col-md-2 pr-1">
+                        <label>Form</label>
+                        <select class="form-control" id="subcategory" name="subcategory">
+                          <option></option>
+                          <option>Form 1</option>
+                          <option>Form 2</option>
+                          <option>Form 3</option>
+                          <option>Form 4</option>
+                          <option>Form 5</option>
+                      </select>
+                      </div>
+                    <div class="col-md-2 pl-1">
+                      <label>Place</label>
+                      <select class="form-control" id="place" name="place">
+                        <option></option>
+                        <option>Location 1</option>                        
+                        <option>Location 2</option>                        
+                        <option>Location 3</option>                        
+                        <option>Location 4</option>                        
+                        <option>Location 5</option>                        
+                      </select>
+                    </div>
+                    <div class="col-md-2 pl-1">
+                      <label>Parameter</label>
+                      <select class="form-control" id="place" name="place">
+                        <option></option>
+                        <option>Ph</option>                        
+                        <option>Salinidad</option>                        
+                        <option>e-Coli</option>                        
+                      </select>
+                    </div>
+                    <div class="col-md-2 pl-1">
+                      <label>Start Date</label>
+                      <input type="date" name="collectedDate" class="form-control" />
+                    </div>
+                    <div class="col-md-2 pl-1">
+                      <label>End Date</label>
+                      <input type="date" name="collectedDate" class="form-control" />
+                    </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <button class="btn btn-success">
+                      Submit Search
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="chart-container">
+                      <canvas  id="MyChart" >{{ chart }}</canvas>
+                    </div>                
+                  </div>
+                  <div class="col-6">
+                    <div class="chart-container">
+                      <canvas  id="MyChartLine" >{{ chartLine }}</canvas>
+                    </div>                
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="chart-container">
+                      <canvas  id="MyChartPolar" >{{ configPolar }}</canvas>
+                    </div>                
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <table class="table table-striped table-hover">
+                      <thead>
+                        <th>Date Collected</th>
+                        <th>Property</th>
+                        <th>Min Value</th>
+                        <th>Max Value</th>
+                        <th>Current Value</th>
+                        <th>Location</th>
+                        <th>Method</th>
+                        <th>Notes</th>
+                      </thead>
+                      <tr>
+                        <td>03/Jun/2024</td>
+                        <td>e-Coli</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td><span class="text text-danger">12</span></td>
+                        <td>Playas de tijuana</td>
+                        <td>Test Mehod 1</td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, esse. Error odio, veritatis minus et quo illum. Maxime fugiat impedit atque non totam quos tempora.</td>
+                      </tr>
+                      <tr>
+                        <td>03/Jun/2024</td>
+                        <td>e-Coli</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td><span class="text text-danger">12</span></td>
+                        <td>Playas de tijuana</td>
+                        <td>Test Mehod 1</td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, esse. Error odio, veritatis minus et quo illum. Maxime fugiat impedit atque non totam quos tempora.</td>
+                      </tr>
+                      <tr>
+                        <td>03/Jun/2024</td>
+                        <td>e-Coli</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td><span class="text text-danger">12</span></td>
+                        <td>Playas de tijuana</td>
+                        <td>Test Mehod 1</td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, esse. Error odio, veritatis minus et quo illum. Maxime fugiat impedit atque non totam quos tempora.</td>
+                      </tr>
+                      <tr>
+                        <td>03/Jun/2024</td>
+                        <td>e-Coli</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td><span class="text text-danger">12</span></td>
+                        <td>Playas de tijuana</td>
+                        <td>Test Mehod 1</td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, esse. Error odio, veritatis minus et quo illum. Maxime fugiat impedit atque non totam quos tempora.</td>
+                      </tr>
+                      <tr>
+                        <td>03/Jun/2024</td>
+                        <td>e-Coli</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td><span class="text text-danger">12</span></td>
+                        <td>Playas de tijuana</td>
+                        <td>Test Mehod 1</td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, esse. Error odio, veritatis minus et quo illum. Maxime fugiat impedit atque non totam quos tempora.</td>
+                      </tr>
+                      <tr>
+                        <td>03/Jun/2024</td>
+                        <td>e-Coli</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td><span class="text text-danger">12</span></td>
+                        <td>Playas de tijuana</td>
+                        <td>Test Mehod 1</td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, esse. Error odio, veritatis minus et quo illum. Maxime fugiat impedit atque non totam quos tempora.</td>
+                      </tr>
+                    </table>                  
+                  </div>
+                </div>
+  
+
+              </div>
+
+
+            <!--end BODY-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--
+
+            <div class="row mb-3">
+                <div class="col-md-6 pr-1">
+                    <app-text-input [formControl]="$any(registerForm.controls['username'])" [label]="'Username'"></app-text-input>
+                </div>
+                <div class="col-md-6 pl-1">
+                    <app-text-input [formControl]="$any(registerForm.controls['email'])" [label]="'Email'" [type]="'email'"></app-text-input>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <app-text-input [formControl]="$any(registerForm.controls['job'])" [label]="'Job Description'"></app-text-input>
+                </div>
+            </div>
+
+
+  -->

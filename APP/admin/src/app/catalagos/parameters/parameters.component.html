@@ -1,0 +1,187 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card card-user">
+        <div class="card-header">
+          <h2 class="card-title">Parameters Catalog</h2>
+
+          <nav class="navbar navbar-light bg-light">
+            <form class="container-fluid justify-content-start">
+              <button class="btn btn-sm btn-outline-success mr-2" (click)="onNew()" type="button">
+                <i style="vertical-align: middle;" class="material-icons">add</i>
+                New
+              </button>
+              <button class="btn btn-sm btn-outline-success mr-2" type="button">
+                <i style="vertical-align: middle;" class="material-icons">save</i>
+                Save
+              </button>
+              <button class="btn btn-sm btn-outline-warning mr-2" type="button">
+                <i style="vertical-align: middle;" class="material-icons">cancel</i>
+                Cancel
+              </button>
+              <button class="btn btn-sm btn-outline-danger mr-2" type="button">
+                <i style="vertical-align: middle;" class="material-icons">delete</i>
+                Delete
+              </button>
+              <button class="btn btn-sm btn-outline-success mr-2" (click)="onReport()" type="button">
+                <i style="vertical-align: middle;" class="material-icons">list</i>
+                Report
+              </button>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Parameter Id or Name" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">
+                  <i style="vertical-align: middle;" class="material-icons">search</i>
+                  Search
+                </button>
+              </form>              
+            </form>
+          </nav>
+
+        </div>
+        <div class="card-body">     
+            <!--BODY-->
+
+            <div class="alert alert-warning">
+              <p class="lead">
+                <strong>Note: </strong>This is for a demo porpouses only.
+              </p>
+            </div>
+
+            <form name="frmParameters" *ngIf="!(_currentOperation == 'report')">
+              <div class="row mb-3">
+                <div class="col-md-6 pr-1">
+                    <label>Laboratory:</label>
+                    <select class="form-control">
+                      <option></option>
+                      <option>CESPT</option>
+                      <option>Laboratorio de Pruebas</option>
+                      <option>Sys-Lab</option>
+                    </select>
+                </div>
+                <div class="col-md-6 pr-1">
+                  <label>Specification Form:</label>
+                  <select class="form-control">
+                    <option></option>
+                    <option>[ Add Form ]</option>
+                    <option>Form 1</option>
+                    <option>Form 2</option>
+                    <option>Form 3</option>
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label>Parameter name:</label>
+                        <input type="text" class="form-control" name="name" [(ngModel)]="currentModel.name" placeholder="Parameter name"/>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label>Describe the porpouse of the parameter:</label>
+                    <div class="col-md-12">
+                        <textarea class="form-control" [(ngModel)]="currentModel.description" placeholder="Add Some description about the parameter..." name="description" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                  <strong>Parameter range values:</strong>
+              </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4 pr-1">
+                        <label>Min Value:</label>
+                        <input type="text" class="form-control" [(ngModel)]="currentModel.minValue" name="minValue" placeholder="Min Value"/>
+                    </div>
+                    <div class="col-md-4 pl-1">
+                        <label>Max Value:</label>
+                        <input type="text" class="form-control" [(ngModel)]="currentModel.maxValue" name="maxValue" placeholder="Max Value"/>
+                    </div>
+                    <div class="col-md-4 pl-1">
+                        <label>Valid Days:</label>
+                        <input type="text" class="form-control" [(ngModel)]="currentModel.validDays" name="validDays" placeholder="Valid Days"/>
+                    </div>
+                </div>
+
+                <!-- <div class="row mb-3">
+                    <div class="col-md-12 pr-1">
+                        <select class="form-control" [(ngModel)]="currentLocation" name="location">
+                          <option *ngFor="let itm of _locations" [ngValue]="itm">{{itm.displayName}}</option>
+                        </select>
+                    </div>
+                </div> -->
+    
+                <!-- <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+                <button class="btn btn-light ms-2" (click)="cancel()">Cancel</button> -->
+              </form>
+
+              <div *ngIf="_currentOperation == 'report'">
+                <h3 class="card-title">Parameters:</h3>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="col-2">Parameter</th>
+                      <th> Min. </th>
+                      <th> Max. </th>
+                      <th> Days Valid </th>
+                      <th> Form </th>
+                      <th> Description </th>
+                      <th class="col-2"> ... </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- <tr *ngFor="let item of _data">
+                      <td> {{item.name}} </td>
+                      <td> {{item.minValue}} </td>
+                      <td> {{item.maxValue}} </td>
+                      <td> {{item.validDays}} </td>
+                      <td> {{item.location.displayName}} </td>
+                      <td> {{item.description}} </td>
+                      <td>
+                          <button *ngIf="!item.editMode" type="button" (click)="edit(item)" class="btn btn-outline-success btn-sm">Edit</button>
+                      </td>
+                    </tr> -->
+                    <tr>
+                      <td>pH</td>
+                      <td>1</td>
+                      <td>10</td>
+                      <td>3</td>
+                      <td>Form 1</td>
+                      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias exercitationem eligendi quae explicabo rem harum!</td>
+                      <td>
+                          <button type="button" class="btn btn-outline-success btn-sm">Edit</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Oxigeno</td>
+                      <td>3</td>
+                      <td>7</td>
+                      <td>2</td>
+                      <td>Form 2</td>
+                      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias exercitationem eligendi quae explicabo rem harum!</td>
+                      <td>
+                          <button type="button" class="btn btn-outline-success btn-sm">Edit</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Metales Pesados</td>
+                      <td>1</td>
+                      <td>20</td>
+                      <td>60</td>
+                      <td>Form 1</td>
+                      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias exercitationem eligendi quae explicabo rem harum!</td>
+                      <td>
+                          <button type="button" class="btn btn-outline-success btn-sm">Edit</button>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+            <!--end BODY-->
+        </div>
+      </div>
+    </div>
+  </div>
+

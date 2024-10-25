@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-6">
+      <div class="card card-user">
+        <div class="card-header">
+          <h3 class="card-title">Reset Password</h3>
+        </div>
+        <div class="card-body">     
+          <form autocomplete="off" [formGroup]="resetForm" (ngSubmit)="resetPwd()">
+            
+            <div class="row mb-3">
+                <div class="col-md-6 pl-1">
+                    <app-text-input [formControl]="$any(resetForm.controls['username'])" [label]="'Username'" [type]="'text'"></app-text-input>
+                </div>
+                <div class="col-md-6 pr-1" *ngIf="requestedCode">
+                    <app-text-input [formControl]="$any(resetForm.controls['resetCode'])" [label]="'Reset Code'"></app-text-input>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="update">
+                  <button type="button" *ngIf="!requestedCode" (click)="requestCode()" class="btn btn-primary btn-round">Request Code</button>
+                  <button type="button" *ngIf="requestedCode && !codeIsValid" (click)="validateCode()" class="btn btn-primary btn-round">Validate Code</button>
+                </div>
+                <div *ngIf="isValidCode == false" style="color: red; padding-top: 5px;">
+                  * Confirmation Code is not valid!, Check your email and enter the correct one!
+                </div>
+            </div>
+
+            <div class="row mb-3" *ngIf="requestedCode && codeIsValid">
+                <div class="col-md-6 pr-1">
+                    <app-text-input [formControl]="$any(resetForm.controls['password'])" [label]="'Password'" [type]="'password'"></app-text-input>
+                </div>
+                <div class="col-md-6 pl-1">
+                    <app-text-input [formControl]="$any(resetForm.controls['confirmPassword'])" [label]="'Confirm Password'" [type]="'password'"></app-text-input>
+                </div>
+            </div>
+
+
+            <div class="row mb-3" *ngIf="requestedCode && codeIsValid">
+              <div class="update">
+                <button type="submit" [disabled]="checkDisbled()" class="btn btn-primary btn-round">Change Password</button>
+                <button type="button" class="btn btn-danger btn-round ms-3" (click)="cancel()">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

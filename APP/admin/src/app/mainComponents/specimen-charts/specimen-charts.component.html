@@ -1,0 +1,109 @@
+<div class="row">
+    <div class="col alert alert-info">
+        <p class="lead m-0">
+            <strong>Note: </strong>Charts only represent at most the last 6 specimen reads.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="card border-0">
+            <div class="card-header mb-0">
+                <h3 class="card-title m-0">
+                    Specimens Collection: CESPT
+                </h3>
+                <h4 class="card-subtitle text-muted m-0">
+                    {{_yearsLab01[0]}}
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <label class="form-label">Chart Type:</label>
+                        <select [(ngModel)]="_chartTypes[0]" name="chartType1" class="form-control">
+                            <option>bar</option>
+                            <option>line</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Collection Point:</label>
+                        <select [(ngModel)]="_currentFilterPoint[0]" (change)="onPointChanged('CESPT')" name="filterPoint" class="form-control">
+                            <option *ngFor="let itm of _specimenPoints[0]">{{itm}}</option>
+                        </select>
+
+                    </div>
+                </div>
+                
+                <canvas id="chardata01" width="100%" height="100%"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col">
+        <div class="card border-0">
+            <div class="card-header mb-0">
+                <h3 class="card-title m-0">
+                    Specimens Collection: PFEA
+                </h3>
+                <h4 class="card-subtitle text-muted m-0">
+                    {{_yearsLab01[1]}}
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <label class="form-label">Chart Type:</label>
+                        <select [(ngModel)]="_chartTypes[1]" name="chartType2" class="form-control">
+                            <option>bar</option>
+                            <option>line</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Collection Point:</label>
+                        <select [(ngModel)]="_currentFilterPoint[1]" (change)="onPointChanged('PFEA')" name="filterPoint" class="form-control">
+                            <option *ngFor="let itm of _specimenPoints[1]">{{itm}}</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <canvas id="chardata02" width="100%" height="100%"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card border-0">
+            <div class="card-header mb-0">
+                <h3 class="card-title m-0">
+                    Specimens Collection: SD County
+                </h3>
+                <h4 class="card-subtitle text-muted m-0">
+                    {{_yearsLab01[2]}}
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <label class="form-label">Chart Type:</label>
+                        <select [(ngModel)]="_chartTypes[2]" name="chartType2" class="form-control">
+                            <option>bar</option>
+                            <option>line</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Collection Point:</label>
+                        <select [(ngModel)]="_currentFilterPoint[2]" (change)="onPointChanged('SD County')" name="filterPoint" class="form-control">
+                            <option *ngFor="let itm of _specimenPoints[2]">{{itm}}</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <canvas id="chardata03" width="100%" height="100%"></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card card-user">
+        <div class="card-header card-header-text">
+          <h4 class="card-title">Aproval or reject users requests</h4>
+        </div>
+        <div class="card-content">     
+            
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Request Date</th>
+                    <th scope="col">Aproval/Reject Date</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">...</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of users">
+                    <th scope="row">{{user.id}}</th>
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.country}}</td>
+                    <td>{{user.registrationDate | date:"MMM dd, yyyy"}}</td>
+                    <td>{{user.startDate | date:"MMM dd, yyyy"}}</td>
+                    <td>
+                        <span *ngIf="(user.status == 'Approved' && !user.editMode)">{{user.role}}</span>
+                        <select *ngIf="(user.status == 'Approved' && user.editMode == true)" class="form-control form-control-sm" [(ngModel)]="user.role">
+                            <option>User</option>
+                            <option>Admin</option>
+                        </select>
+                    </td>
+                    <td>
+                        <div *ngIf="(user.status == 'Pending' && currentUserLogged.role == 'Admin')">
+                            <button type="button" (click)="approve(user)" class="btn btn-outline-primary btn-sm">Approve</button>
+                            <button type="button" (click)="reject(user)" class="btn btn-outline-danger btn-sm ms-2">Reject</button>    
+                        </div>
+                        <div *ngIf="(user.status == 'Approved' && currentUserLogged.role == 'Admin')">
+                            <button *ngIf="!user.editMode" type="button" (click)="edit(user)" class="btn btn-outline-success btn-sm">Edit</button>
+                            <div *ngIf="user.editMode">
+                                <button type="button" (click)="update(user)" class="btn btn-outline-success btn-sm">Update</button>
+                                <button type="button" (click)="cancelUpdate(user)" class="btn btn-outline-danger btn-sm ms-2">Cancel</button>
+                            </div>
+                        </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
