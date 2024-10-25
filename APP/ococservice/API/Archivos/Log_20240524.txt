@@ -1,0 +1,117 @@
+- - Log ERROR - -
+20240524_170016 - Error on: QualityStandards.Create
+20240524_170016 - Inputs: {"Organization":"Mi Estandar","Abbr":"ME","Country":"Mx","Items":[{"ItemId":2,"UnitId":1,"Ranges":[{"LowerLim":0,"UpperLim":100,"Notes":"Niveles normales","Semaphore":{"SemaphoreId":1,"Name":"string","Color":"string","Hex":"string"}},{"LowerLim":101,"UpperLim":200,"Notes":"Preferible no nadar","Semaphore":{"SemaphoreId":0,"Name":"Precauicion","Color":"Amarillo Pasto","Hex":"#EFF77E"}}]}]}
+20240524_170016 - Message error: Value cannot be null. (Parameter 'entities')
+20240524_170016 - Path:    at Microsoft.EntityFrameworkCore.Utilities.Check.NotNull[T](T value, String parameterName)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.AddRange(IEnumerable`1 entities)
+   at API.Data.QualityStandardRepository.AddItemsRange(IEnumerable`1 entities) in c:\Repos\ococ\ococservice\API\Data\QualityStandardRepository.cs:line 50
+   at API.Controllers.QualityStandardsController.Create(QualityStandardIDTO item) in c:\Repos\ococ\ococservice\API\Controllers\QualityStandardsController.cs:line 81
+----------------------------------
+20240524_192933 - Error on: QualityStandards.Create
+20240524_192933 - Inputs: {"Organization":"Mi Estandar","Abbr":"ME","Country":"Mx","Items":[{"ItemId":2,"UnitId":1,"Ranges":[{"LowerLim":0,"UpperLim":100,"Notes":"Niveles normales","Semaphore":{"SemaphoreId":1,"Name":"string","Color":"string","Hex":"string"}},{"LowerLim":101,"UpperLim":200,"Notes":"Preferible no nadar","Semaphore":{"SemaphoreId":0,"Name":"Precauicion","Color":"Amarillo Pasto","Hex":"#EFF77E"}}]}]}
+20240524_192933 - Message error: An error occurred while saving the entity changes. See the inner exception for details.
+20240524_192933 - Path:    at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at API.Data.CommonRepository`1.SaveAllAsync() in c:\Repos\ococ\ococservice\API\Data\CommonRepository.cs:line 98
+   at API.Controllers.QualityStandardsController.Create(QualityStandardIDTO item) in c:\Repos\ococ\ococservice\API\Controllers\QualityStandardsController.cs:line 89
+----------------------------------
+20240524_194331 - Error on: QualityStandards.Create
+20240524_194331 - Inputs: {"Organization":"Mi Estandar","Abbr":"ME","Country":"Mx","Items":[{"ItemId":2,"UnitId":1,"Ranges":[{"LowerLim":0,"UpperLim":100,"Notes":"Niveles normales","Semaphore":{"SemaphoreId":1,"Name":"string","Color":"string","Hex":"string"}},{"LowerLim":101,"UpperLim":200,"Notes":"Preferible no nadar","Semaphore":{"SemaphoreId":null,"Name":"Precauicion","Color":"Amarillo Pasto","Hex":"#EFF77E"}}]}]}
+20240524_194331 - Message error: An error occurred while saving the entity changes. See the inner exception for details.
+20240524_194331 - Path:    at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at API.Data.CommonRepository`1.SaveAllAsync() in c:\Repos\ococ\ococservice\API\Data\CommonRepository.cs:line 98
+   at API.Controllers.QualityStandardsController.Create(QualityStandardIDTO item) in c:\Repos\ococ\ococservice\API\Controllers\QualityStandardsController.cs:line 89
+----------------------------------
+20240524_195305 - Error on: QualityStandards.Create
+20240524_195305 - Inputs: {"Organization":"Mi Estandar","Abbr":"ME","Country":"Mx","Items":[{"ItemId":2,"UnitId":1,"Ranges":[{"LowerLim":0,"UpperLim":100,"Notes":"Niveles normales","Semaphore":{"SemaphoreId":1,"Name":"string","Color":"string","Hex":"string"}},{"LowerLim":101,"UpperLim":200,"Notes":"Preferible no nadar","Semaphore":{"SemaphoreId":null,"Name":"Precauicion","Color":"Amarillo Pasto","Hex":"#EFF77E"}}]}]}
+20240524_195305 - Message error: An error occurred while saving the entity changes. See the inner exception for details.
+20240524_195305 - Path:    at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at API.Data.CommonRepository`1.SaveAllAsync() in c:\Repos\ococ\ococservice\API\Data\CommonRepository.cs:line 98
+   at API.Controllers.QualityStandardsController.Create(QualityStandardIDTO item) in c:\Repos\ococ\ococservice\API\Controllers\QualityStandardsController.cs:line 91
+----------------------------------
+20240524_205235 - Error on: QualityStandards.AddItem
+20240524_205235 - Inputs: QSId: 4; Item: {"ItemId":2,"UnitId":3,"Ranges":[{"LowerLim":7,"UpperLim":25,"Notes":"Temperatura esperada","SemaphoreId":1}]}
+20240524_205235 - Message error: An error occurred while saving the entity changes. See the inner exception for details.
+20240524_205235 - Path:    at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at API.Data.CommonRepository`1.SaveAllAsync() in c:\Repos\ococ\ococservice\API\Data\CommonRepository.cs:line 98
+   at API.Controllers.QualityStandardsController.AddItem(QualityStandardItemIDTO item, Int32 id) in c:\Repos\ococ\ococservice\API\Controllers\QualityStandardsController.cs:line 146
+----------------------------------
+20240524_210002 - Error on: QualityStandards.AddItem
+20240524_210002 - Inputs: QSId: 4; Item: {"ItemId":2,"UnitId":3,"Ranges":[{"LowerLim":7,"UpperLim":25,"Notes":"Temperatura esperada","SemaphoreId":1}]}
+20240524_210002 - Message error: An error occurred while saving the entity changes. See the inner exception for details.
+20240524_210002 - Path:    at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at API.Data.CommonRepository`1.SaveAllAsync() in c:\Repos\ococ\ococservice\API\Data\CommonRepository.cs:line 98
+   at API.Controllers.QualityStandardsController.AddItem(QualityStandardItemIDTO item, Int32 id) in c:\Repos\ococ\ococservice\API\Controllers\QualityStandardsController.cs:line 147
+----------------------------------
+20240524_221205 - Error on: QualityStandards.DeleteItem
+20240524_221205 - Inputs: QSItemId: 4
+20240524_221205 - Message error: An error occurred while saving the entity changes. See the inner exception for details.
+20240524_221205 - Path:    at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at API.Data.CommonRepository`1.SaveAllAsync() in c:\Repos\ococ\ococservice\API\Data\CommonRepository.cs:line 98
+   at API.Controllers.QualityStandardsController.DeleteItem(Int32 qsItemId) in c:\Repos\ococ\ococservice\API\Controllers\QualityStandardsController.cs:line 201
+----------------------------------

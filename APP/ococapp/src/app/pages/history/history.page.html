@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img src="../../../assets/images/logo-default-450x37_2.PNG" style="display:inline-block" height="40px"/>          
+        </ion-col>
+        <ion-col>
+          <ion-title class="headerTitle">History</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <img src="../../../assets/images/logo-default-450x37_2.PNG" width="40px" style="display:inline-block" height="40px"/>
+      <ion-title size="large">History</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+
+  <div class="ion-padding">
+
+
+    <ion-card class="mainInfo" color="secondary">
+      <div class="mask">
+        <img src="assets/wave2.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">
+              
+            </ion-card-subtitle>
+            <ion-card-title>Playas de Tijuana</ion-card-title>
+            <ion-card-subtitle>
+              <ion-badge>
+                <ion-icon color="danger" name="radio-button-on-outline"></ion-icon>
+                <ion-text>Danger</ion-text>
+              </ion-badge>
+            </ion-card-subtitle>
+          </ion-col>
+          <ion-col size="4">
+  
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+  
+                  <div class="displayer">
+                    <div class="progress less" style="--i:20;--clr:#fb297b;">
+                      <h3>20<span>%</span></h3>
+                      <!-- <h4>Safe</h4> -->
+                    </div>
+                  </div>
+                 
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          
+  
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  
+    </div>
+
+
+    <ion-content color="light">
+      <ion-list [inset]="true">
+        <ion-item *ngFor="let item of this.data" [routerLink]="['/details']">
+          <ion-badge [color]="this.getColor(item.stillValid)" slot="end">{{item.message}}</ion-badge>
+          <ion-label>{{item.collectedDate}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  
+</ion-content>

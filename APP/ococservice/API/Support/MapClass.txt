@@ -1,0 +1,10 @@
+Ubicaciones
+-----------
+
+Clategoy            -> Agua, Aire, Bosque, Desierto, Inserctos...
+    SubCategory     -> Playas, Rios, Lagos, etc..
+        Places      -> Playa de Tijuana, Playas de Rosarito, Coronado Beach
+            Points  -> Punto exacto de donde se toma la muestra.
+
+
+
